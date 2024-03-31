@@ -13,6 +13,14 @@
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
+    "paths": {
+      "notify-message": [
+        "./dist/notify-message"
+      ],
+      "toastr-notify": [
+        "./dist/toastr-notify"
+      ]
+    },
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",

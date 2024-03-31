@@ -101,6 +101,75 @@
           }
         }
       }
+    },
+    "notify-message": {
+      "projectType": "library",
+      "root": "projects/notify-message",
+      "sourceRoot": "projects/notify-message/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/notify-message/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/notify-message/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/notify-message/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/notify-message/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "toastr-notify": {
+      "projectType": "library",
+      "root": "projects/toastr-notify",
+      "sourceRoot": "projects/toastr-notify/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/toastr-notify/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/toastr-notify/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/toastr-notify/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/toastr-notify/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "bc26d1cf-e7de-41ae-83fe-95ed8697985d"
   }
 }

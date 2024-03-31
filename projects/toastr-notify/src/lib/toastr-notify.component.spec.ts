@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotifyMessageComponent } from './notify-message.component';
+import { ToastrNotifyComponent } from './toastr-notify.component';
 
-describe('NotifyMessageComponent', () => {
-  let component: NotifyMessageComponent;
-  let fixture: ComponentFixture<NotifyMessageComponent>;
+describe('ToastrNotifyComponent', () => {
+  let component: ToastrNotifyComponent;
+  let fixture: ComponentFixture<ToastrNotifyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NotifyMessageComponent]
+      imports: [ToastrNotifyComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NotifyMessageComponent);
+    fixture = TestBed.createComponent(ToastrNotifyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

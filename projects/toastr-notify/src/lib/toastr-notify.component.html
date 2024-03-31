@@ -1,0 +1,22 @@
+<div class="base_notify">
+  <div class="notifyBox border"
+       *ngFor="let t of toastr"
+       [ngClass]="t.type"
+       style="--animation-duration: {{animationDurationSeconds + 's'}};"
+        [@fadeInOut]>
+    <span [innerHTML]="t.icon"></span>
+    <span>{{ t.message }}</span>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="20" (click)="hideToastr(t.id)"
+         style="cursor: pointer" fill="none"
+         viewBox="0 0 24 24" stroke-width="1.5"
+         stroke="firebrick" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </div>
+</div>
+
+
+
+
+
