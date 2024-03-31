@@ -29,7 +29,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
 })
 export class ToastrNotifyComponent implements OnInit{
  public toastr!: { type: string; message: string; icon: SafeHtml } |any;
-  animationDurationSeconds: number = 10;
+  animationDurationSeconds: number = 20;
 
   constructor(private toastrService: ToastrNotifyService) { }
 
@@ -44,6 +44,7 @@ export class ToastrNotifyComponent implements OnInit{
     const index = this.toastr.findIndex((t: { id: number; }) => t.id === id);
     if (index !== -1) {
       this.toastr.splice(index, 1);
+      console.log(this.toastr,"ACTUAL")
       this.toastrService.hide(index);
     }
   }
