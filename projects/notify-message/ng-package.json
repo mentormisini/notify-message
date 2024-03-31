@@ -3,5 +3,6 @@
   "dest": "../../dist/notify-message",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+
 }
