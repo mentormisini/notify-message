@@ -18,7 +18,7 @@
   justify-content: space-between;
   gap: 10px;
   align-items: center;
-  position: relative; /* Add position relative to .notifyBox */
+  position: relative;
 }
 
 .border::before {
@@ -29,15 +29,15 @@
   width: 5px;
   height: 1px;
   border-radius: 10px;
-  animation: fillBorder var(--animation-duration) ease forwards;
+  animation: fillBorder var(--animation-duration) ease backwards;
 }
 
 @keyframes fillBorder {
   0% {
-    width: 100%; /* Change width to height */
+    width: 0%;
   }
   100% {
-    width: 0%; /* Change width to height */
+    width: 100%;
   }
 }
 .success{
@@ -51,7 +51,6 @@
   background: rgba(210, 92, 7, 0.06);
   border-left: 6px solid orange;
 }
-
 .warning::before{
   background: orange;
 }

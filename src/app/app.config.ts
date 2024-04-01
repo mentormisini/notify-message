@@ -11,7 +11,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     importProvidersFrom(MToastrModule.withConfig({
       toastrTimeOut: 10000,
-      progressBarTimeOut:1000
+      fontFamily:'Montserrat SemiBold',
+      fontSize:13
     })),
     provideClientHydration()]
 };

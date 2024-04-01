@@ -5,7 +5,7 @@
        style="--animation-duration:{{mToastConfig.toastrTimeOut + 'ms'}};"
        [@fadeInOut]>
     <span [innerHTML]="t.icon"></span>
-    <span>{{ t.message }}</span>
+    <span [style.font-family]="mToastConfig.fontFamily" [style.font-size.px]="mToastConfig.fontSize">{{ t.message }}</span>
     <svg xmlns="http://www.w3.org/2000/svg"
          width="20" (click)="hideToastr(t.id)"
          style="cursor: pointer" fill="none"
