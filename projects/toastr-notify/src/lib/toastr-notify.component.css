@@ -24,22 +24,39 @@
 .border::before {
   content: '';
   position: absolute;
-  left:0;
+  left: 0;
   bottom: 0;
-  width: 5px;
   height: 1px;
   border-radius: 10px;
-  animation: fillBorder var(--animation-duration) ease backwards;
 }
 
-@keyframes fillBorder {
+
+.increase-animation::before {
+  animation: increase var(--animation-duration) ease forwards;
+}
+
+.decrease-animation::before {
+  animation: decrease var(--animation-duration) ease forwards;
+}
+
+@keyframes increase {
   0% {
-    width: 0%;
+    width: 0;
   }
   100% {
     width: 100%;
   }
 }
+
+@keyframes decrease {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
 .success{
   background: rgba(7, 210, 7, 0.11);
   border-left: 6px solid green;
@@ -47,6 +64,7 @@
 .success::before {
   background-color: green;
 }
+
 .warning{
   background: rgba(210, 92, 7, 0.06);
   border-left: 6px solid orange;

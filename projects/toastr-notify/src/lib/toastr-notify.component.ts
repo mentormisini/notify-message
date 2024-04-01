@@ -32,7 +32,8 @@ export class ToastrNotifyComponent implements OnInit{
  public toastr!: { type: string; message: string; icon: SafeHtml } |any;
 
   constructor(private toastrService: ToastrNotifyService,
-              public mToastConfig: MToastrConfigService) {}
+              public mToastConfig: MToastrConfigService) {
+  }
 
   ngOnInit(): void {
     this.toastrService.getToastr().subscribe(toastr => {

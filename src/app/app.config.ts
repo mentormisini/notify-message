@@ -12,7 +12,9 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(MToastrModule.withConfig({
       toastrTimeOut: 10000,
       fontFamily:'Montserrat SemiBold',
-      fontSize:13
+      fontSize:13,
+      progressBarAnimation:'increase',
+      removeProgressBar:false
     })),
     provideClientHydration()]
 };
