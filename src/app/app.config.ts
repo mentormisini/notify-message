@@ -10,8 +10,8 @@ export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes),
     provideAnimations(),
     importProvidersFrom(MToastrModule.withConfig({
-      toastrTimeOut: 1000,
-      progressBarTimeOut:1
+      toastrTimeOut: 10000,
+      progressBarTimeOut:1000
     })),
     provideClientHydration()]
 };
