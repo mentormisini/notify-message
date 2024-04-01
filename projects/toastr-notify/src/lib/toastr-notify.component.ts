@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AsyncPipe, NgClass, NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {ToastrNotifyService} from "./toastr-notify.service";
 import {SafeHtml} from "@angular/platform-browser";
 import {animate, style, transition, trigger} from "@angular/animations";
@@ -11,7 +11,6 @@ import {MToastrConfigService} from "./mToastr-config.service";
   imports: [
     NgClass,
     NgIf,
-    AsyncPipe,
     NgForOf
   ],
   templateUrl:'toastr-notify.component.html',
@@ -38,18 +37,18 @@ export class ToastrNotifyComponent implements OnInit{
   ngOnInit(): void {
     this.toastrService.getToastr().subscribe(toastr => {
       this.toastr = toastr;
-      console.log(this.toastr)
     });
   }
 
   hideToastr(id: number): void {
-    const index = this.toastr.findIndex((t: { id: number; }) => t.id === id);
-    if (index !== -1) {
+    const toastrToRemove = this.toastr.find((toastr:any)=> toastr.id === id);
+    if (toastrToRemove) {
+      const index = this.toastr.indexOf(toastrToRemove);
       this.toastr.splice(index, 1);
-      console.log(this.toastr,"ACTUAL")
-      this.toastrService.hide(index);
+      this.toastrService.hide(toastrToRemove);
     }
   }
+
 
 
 

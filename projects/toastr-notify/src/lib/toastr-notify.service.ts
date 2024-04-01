@@ -57,15 +57,14 @@ export class ToastrNotifyService {
   }
 
   hide(toastr: any): void {
-    console.log(toastr, "UPDATED ARR")
     const index = this.toastrs.indexOf(toastr);
     if (index !== -1) {
-      const toastr = this.toastrs[index];
       clearTimeout(toastr.timeoutRef);
       this.toastrs.splice(index, 1);
       this.toastrSubject.next([...this.toastrs]);
     }
   }
+
 
 }
 

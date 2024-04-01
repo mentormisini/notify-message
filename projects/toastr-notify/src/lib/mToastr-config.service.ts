@@ -8,13 +8,15 @@ import {Injectable} from "@angular/core";
 export class MToastrConfigService{
   public config = {
     closeButton: true,
-    toastrTimeOut:5000,
-    fontFamily:"Montserrat SemiBold",
+    toastrTimeOut:50000,
+    fontFamily:"Arial",
     fontSize:12,
     progressBarAnimation:'increase',
     removeProgressBar:false,
     removeButton:false,
-    removeBackgrounds:false
+    removeBackgrounds:false,
+    position: "end",
+    positionBottom:"0"
   };
 
   toastrTimeOut:number = this.config.toastrTimeOut;
@@ -24,5 +26,7 @@ export class MToastrConfigService{
   removeProgressBar:boolean = this.config.removeProgressBar;
   removeButton:boolean = this.config.removeButton;
   removeBackgrounds:boolean = this.config.removeBackgrounds;
+  position:string = this.config.position;
+  positionBottom:string = this.config.positionBottom;
 
 }
