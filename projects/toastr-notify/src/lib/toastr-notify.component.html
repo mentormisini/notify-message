@@ -2,8 +2,10 @@
   <div class="notifyBox border"
        *ngFor="let t of toastr"
        [class]="t.type"
-       [ngClass]="!mToastConfig.removeProgressBar ? {'increase-animation': mToastConfig.progressBarAnimation === 'increase',
-                    'decrease-animation': mToastConfig.progressBarAnimation === 'decrease'} : ''"
+       [ngClass]="!mToastConfig.removeProgressBar ?
+                    {'increase-animation': mToastConfig.progressBarAnimation === 'increase',
+                    'decrease-animation':  mToastConfig.progressBarAnimation === 'decrease',
+                     'remove_class': mToastConfig.removeBackgrounds} : ''"
        [style.--animation-duration]="mToastConfig.toastrTimeOut + 'ms'"
        [@fadeInOut]>
     <span [innerHTML]="t.icon"></span>

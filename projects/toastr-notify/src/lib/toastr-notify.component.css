@@ -87,3 +87,7 @@
   background: firebrick;
 }
 
+.remove_class{
+  background: white !important;
+}
+

@@ -15,7 +15,8 @@ export const appConfig: ApplicationConfig = {
       fontSize:13,
       progressBarAnimation:'increase',
       removeProgressBar:false,
-      removeButton:true
+      removeButton:false,
+      removeBackgrounds:true
     })),
     provideClientHydration()]
 };
