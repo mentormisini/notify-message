@@ -12,7 +12,8 @@ export class MToastrConfigService{
     fontFamily:"Montserrat SemiBold",
     fontSize:12,
     progressBarAnimation:'increase',
-    removeProgressBar:true
+    removeProgressBar:true,
+    removeButton:true
   };
 
   toastrTimeOut:number = this.config.toastrTimeOut;
@@ -20,5 +21,6 @@ export class MToastrConfigService{
   fontSize:number = this.config.fontSize;
   progressBarAnimation:string = this.config.progressBarAnimation;
   removeProgressBar:boolean = this.config.removeProgressBar;
+  removeButton:boolean = this.config.removeButton
 
 }

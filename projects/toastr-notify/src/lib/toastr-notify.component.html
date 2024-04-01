@@ -9,6 +9,7 @@
     <span [innerHTML]="t.icon"></span>
     <span [style.font-family]="mToastConfig.fontFamily"
           [style.font-size.px]="mToastConfig.fontSize">{{ t.message }}</span>
+    <ng-container *ngIf="!mToastConfig.removeButton;else showEmpty">
     <svg xmlns="http://www.w3.org/2000/svg"
          width="20" (click)="hideToastr(t.id)"
          style="cursor: pointer" fill="none"
@@ -16,6 +17,9 @@
          stroke="firebrick" class="w-6 h-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
     </svg>
+    </ng-container>
+    <ng-template #showEmpty>&nbsp;</ng-template>
+
   </div>
 </div>
 
