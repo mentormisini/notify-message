@@ -1,30 +1,27 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import {MToastrModel} from "./mToastr.model";
+import {MToastrConfigService} from "./mToastr-config.service";
 
-interface Toastr {
-  id: number;
-  type: string;
-  message: string;
-  icon: SafeHtml;
-  timeoutRef: any;
-}
+
 @Injectable({
   providedIn: 'root'
 })
-export class ToastrNotifyService {
-  private toastrs: Toastr[] = [];
-  private toastrId = 0;
-  private toastrSubject = new BehaviorSubject<Toastr[]>([]);
 
-  constructor(private domsanitizer: DomSanitizer) {}
+export class ToastrNotifyService {
+  private toastrs: MToastrModel[] = [];
+  private toastrId = 0;
+  private toastrSubject = new BehaviorSubject<MToastrModel[]>([]);
+
+  constructor(private domsanitizer: DomSanitizer, private mToastrConfig: MToastrConfigService) {}
 
    getToastr() {
     return this.toastrSubject.asObservable();
   }
 
   showToastr(type: string, message: string, icon: SafeHtml): void {
-    const toastr: Toastr = {
+    const toastr: MToastrModel = {
       id: ++this.toastrId,
       type,
       message,
@@ -53,10 +50,10 @@ export class ToastrNotifyService {
     this.showToastr('danger', message, danger_icon);
   }
 
-  autoClose(toastr: Toastr): void {
+  autoClose(toastr: MToastrModel): void {
       toastr.timeoutRef = setTimeout(() => {
         this.hide(toastr);
-      }, 10000);
+      }, this.mToastrConfig.toastrTimeOut);
   }
 
   hide(toastr: any): void {

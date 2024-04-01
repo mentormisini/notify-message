@@ -2,7 +2,7 @@
   <div class="notifyBox border"
        *ngFor="let t of toastr"
        [ngClass]="t.type"
-       style="--animation-duration:{{animationDurationSeconds + 's'}};"
+       style="--animation-duration: {{mToastConfig.progressBarTimeOut + 's'}};"
         [@fadeInOut]>
     <span [innerHTML]="t.icon"></span>
     <span>{{ t.message }}</span>

@@ -3,6 +3,7 @@ import {AsyncPipe, NgClass, NgForOf, NgIf} from "@angular/common";
 import {ToastrNotifyService} from "./toastr-notify.service";
 import {SafeHtml} from "@angular/platform-browser";
 import {animate, style, transition, trigger} from "@angular/animations";
+import {MToastrConfigService} from "./mToastr-config.service";
 
 @Component({
   selector: 'lib-toastr-notify',
@@ -29,9 +30,9 @@ import {animate, style, transition, trigger} from "@angular/animations";
 })
 export class ToastrNotifyComponent implements OnInit{
  public toastr!: { type: string; message: string; icon: SafeHtml } |any;
-  animationDurationSeconds: number = 20;
 
-  constructor(private toastrService: ToastrNotifyService) { }
+  constructor(private toastrService: ToastrNotifyService, public mToastConfig: MToastrConfigService) {
+  }
 
   ngOnInit(): void {
     this.toastrService.getToastr().subscribe(toastr => {

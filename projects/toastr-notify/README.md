@@ -1,7 +1,6 @@
 # ToastrNotify
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
-
+Run `npm i toastr-notify@latest`
 ## Code scaffolding
 
 Run `ng generate component component-name --project toastr-notify` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project toastr-notify`.
