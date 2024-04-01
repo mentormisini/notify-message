@@ -1,5 +1,3 @@
-// app.module.ts
-
 import { NgModule } from '@angular/core';
 import {ToastrNotifyComponent} from "./toastr-notify.component";
 import {ToastrNotifyService} from "./toastr-notify.service";

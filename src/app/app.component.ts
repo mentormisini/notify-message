@@ -16,8 +16,5 @@ export class AppComponent {
   constructor(public toasterService: ToastrNotifyService) {
   }
   title = 'Notify';
-  onClickShowSuccessToastr(): void {
-    this.toasterService.showSuccess('tung');
-  }
 
 }
