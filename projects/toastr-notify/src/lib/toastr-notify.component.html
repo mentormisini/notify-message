@@ -1,6 +1,7 @@
- <div class="base_notify"
-      [style.align-items]="mToastConfig.position"
-      [style.top]="mToastConfig.positionBottom">
+<div style="position: relative">
+  <div class="base_notify"
+       [style.align-items]="mToastConfig.position"
+       [style.top]="mToastConfig.positionBottom">
     <div class="notifyBox border"
          *ngFor="let t of toastr"
          [class]="t.type"
@@ -28,3 +29,5 @@
       <ng-template #showEmpty>&nbsp;</ng-template>
     </div>
   </div>
+
+</div>

@@ -1,12 +1,186 @@
-
-<button (click)="this.toasterService.showSuccess('Account Created Successfully')">Success</button>
-<button (click)="this.toasterService.showWarning('Account Changed Successfully')">Warning</button>
-<button (click)="this.toasterService.showInfo('Account Switched Successfully')">Info</button>
-<button (click)="this.toasterService.showDanger('Account Deleted Successfully')">Danger</button>
 <lib-toastr-notify></lib-toastr-notify>
-<h1>Test Component</h1>
-<h1>Test Component</h1>
-<h1>Test Component</h1>
-<h1>Test Component</h1>
-<h1>Test Component</h1>
+<div class="row p-5">
+  <div class="col-md">Toastr-Notify</div>
+    <div class="row">
+      <div class="col-md-3 p-2 m-2">
+        <div class=fakeMenu>
+          <div class="fakeButtons fakeClose"></div>
+          <div class="fakeButtons fakeMinimize"></div>
+          <div class="fakeButtons fakeZoom"></div>
+        </div>
+        <div class="fakeScreen">
+          <p class="line3"><i>Config Your App Module</i></p>
 
+          <p class="line2">{{config}} </p>
+          <p class="line1" *ngFor="let pos of storeConfig;trackBy: trackByFn">
+            {{pos.name +':' + pos.value}},
+            <span class="cursor1">_</span></p>
+          <p class="line2">{{closeConfig}}</p>
+        </div>
+      </div>
+        <div class="col-md p-2 m-2">
+            <div class="row">
+              <div class="col-md">
+                <div class="card_temp">
+                  <input type="text" placeholder="Enter your message"  [(ngModel)]="desired_text" class="form-control"><br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                           [(ngModel)]="selected_toastr" value="success" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1" class="text-success">
+                      Success
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                           [(ngModel)]="selected_toastr"  value="warning" id="warning" >
+                    <label class="form-check-label" for="warning" class="text-warning">
+                      Warning
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                           [(ngModel)]="selected_toastr" value="info" id="info" >
+                    <label class="form-check-label" for="info" class="text-info">
+                      Info
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                           [(ngModel)]="selected_toastr" value="danger" id="danger" >
+                    <label class="form-check-label" for="danger" class="text-danger">
+                      Danger
+                    </label>
+                  </div>
+                  <br>
+               <div class="d-flex justify-content-between">
+                 <button type="button" class="btn btn-primary"
+                         (click)="showToastr()">Fire Toastr</button>
+                 <button type="button" class="btn btn-danger"
+                         (click)="resetToastr()">Reset Toastr</button>
+               </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="card_temp">
+
+                    <div class="input-group mb-2">
+                      <span class="input-group-text text-bl" id="basic-addon3">Toastr TimeOut (ms)</span>
+                      <input type="number" class="form-control" value="timeout"
+                             [(ngModel)]="toastrTimeOut"
+                             (change)="pushData('toastrTimeOut', toastrTimeOut)"id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text text-bl" id="fontFamily">Font Family</span>
+                    <input type="text" class="form-control" value="fontFamily"
+                           [(ngModel)]="fontFamily"
+                           (change)="pushData('fontFamily', fontFamily)"
+                           id="fontFamily" aria-describedby="basic-addon3 basic-addon4">
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text text-bl" id="fontSize">Font Size</span>
+                    <input type="number" class="form-control"
+                           value="fontSize" [(ngModel)]="fontSize"
+                           (change)="pushData('fontSize', fontSize)" id="fontSize" aria-describedby="basic-addon3 basic-addon4">
+                  </div>
+                  <div class="row p-2">
+                    <div class="col-md">
+                      <label>Progress Bar Animation</label><br><br>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="show"
+                               id="remove" [value]="false"
+                               [(ngModel)]="removeProgressBar"
+                               (change)="pushData('removeProgressBar',removeProgressBar)">
+                        <label class="form-check-label" for="disable">
+                          Show
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="show"
+                                id="disable" [value]="true"
+                               [(ngModel)]="removeProgressBar"
+                            (change)="pushData('removeProgressBar',removeProgressBar)">
+                        <label class="form-check-label" for="disable">
+                          Disable
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="progress"
+                               value="increase" id="increase" [(ngModel)]="progressBarAnimation"
+                               (change)="pushData('progressBarAnimation',progressBarAnimation)" checked>
+                        <label class="form-check-label" for="increase">
+                          Increase
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="progress"
+                               value="decrease"
+                               [(ngModel)]="progressBarAnimation"
+                               (change)="pushData('progressBarAnimation',progressBarAnimation)"
+                               id="decrease" >
+                        <label class="form-check-label" for="decrease">
+                          Decrease
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md">
+                      <hr>
+
+                     <div class="d-flex justify-content-between">
+                       <div class="form-check form-switch">
+                         <input class="form-check-input" type="checkbox"
+                                [(ngModel)]="removeButton"
+                                (change)="pushData('removeButton',removeButton)"role="switch" id="flexSwitchCheckDefault">
+                         <label class="form-check-label" for="flexSwitchCheckDefault">Remove Button</label>
+                       </div>
+                       <div class="form-check form-switch">
+                         <input class="form-check-input" type="checkbox" role="switch"
+                                [(ngModel)]="removeBackgrounds"
+                                (change)="pushData('removeBackgrounds',removeBackgrounds)"
+                                id="flexSwitchCheckDefault2">
+                         <label class="form-check-label" for="flexSwitchCheckDefault2">Remove Backgrounds</label>
+                       </div>
+                     </div>
+                      <hr>
+                      <h5>Toastr Position</h5>
+                      <div class="card_temp">
+                      <div class="col-md p-2 mt-2 card_temp d-flex justify-content-evenly">
+                        <input type="radio" class="btn-check" id="top" name="positionBottom" value="0"
+                               [(ngModel)]="positionBottom"
+                               (change)="pushData('positionBottom', positionBottom)">
+                        <label class="btn btn-outline-secondary"for="top" >Top</label>
+                        <input type="radio" class="btn-check" id="bottom" name="positionBottom" value="auto"
+                               [(ngModel)]="positionBottom"
+                               (change)="pushData('positionBottom', positionBottom)" checked>
+                        <label  class="btn btn-outline-secondary"for="bottom">Bottom</label>
+                      </div>
+
+                      <div class="col-md p-2 mt-2 d-flex justify-content-between">
+                        <input type="radio" class="btn-check" id="btn-check-4"
+                               value="start"
+                               name="positionSelected"
+                               [(ngModel)]="position"
+                               (change)="pushData('position', position)"checked>
+                        <label class="btn" for="btn-check-4">Left</label>
+
+                        <input type="radio" class="btn-check" value="center" id="center"
+                               [(ngModel)]="position"
+                               (change)="pushData('position', position)"
+                               name="positionSelected">
+                        <label class="btn" for="center">Center</label>
+
+                        <input type="radio" class="btn-check" id="right"
+                               value="end"
+                               [(ngModel)]="position"
+                               (change)="pushData('position', position)"
+                               name="positionSelected"  >
+                        <label class="btn" for="right">Right</label>
+                      </div>
+                      </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+    </div>

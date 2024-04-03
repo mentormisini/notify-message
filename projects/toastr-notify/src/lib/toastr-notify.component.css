@@ -3,12 +3,13 @@
   flex-direction: column;
   gap:20px;
   position: absolute;
-  top: 0;
+  z-index: 1;
   left: 0;
   right: 0;
-  bottom:0;
-  margin:20px;
+  margin:10px 10px;
+
 }
+
 .notifyBox {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   padding: 12px;
@@ -57,7 +58,7 @@
 }
 
 .success{
-  background: rgba(7, 210, 7, 0.11);
+  background: #E4FAE4;
   border-left: 6px solid green;
 }
 .success::before {

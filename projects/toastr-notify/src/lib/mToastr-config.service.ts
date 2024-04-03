@@ -8,9 +8,9 @@ import {Injectable} from "@angular/core";
 export class MToastrConfigService{
   public config = {
     closeButton: true,
-    toastrTimeOut:50000,
+    toastrTimeOut:5000,
     fontFamily:"Arial",
-    fontSize:12,
+    fontSize:15,
     progressBarAnimation:'increase',
     removeProgressBar:false,
     removeButton:false,

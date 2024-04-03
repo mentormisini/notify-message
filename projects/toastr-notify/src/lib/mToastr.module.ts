@@ -16,7 +16,7 @@ export class MToastrModule {
     ngModule: typeof MToastrModule;
     providers: { provide: typeof MToastrConfigService; useValue: Partial<MToastrConfigService> }[]
   } {
-    const mergedConfig = { ...new MToastrConfigService(), ...config }; // Merge with default values
+    const mergedConfig = { ...new MToastrConfigService(), ...config };
     return {
       ngModule: MToastrModule,
       providers: [
