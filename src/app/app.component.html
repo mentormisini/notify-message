@@ -1,7 +1,10 @@
 <lib-toastr-notify></lib-toastr-notify>
 <div class="row p-5">
-  <div class="col-md">Toastr-Notify</div>
+  <div class="col-md">
+    <h5 class="d-flex justify-content-center"> Toastr Notify for Angular </h5>
+    <a class="d-flex justify-content-center brand" href="https://mentormisini.com" target="_blank"><i>By:&nbsp;</i>MM</a></div>
     <div class="row">
+
       <div class="col-md-3 p-2 m-2">
         <div class=fakeMenu>
           <div class="fakeButtons fakeClose"></div>
@@ -52,6 +55,7 @@
                     </label>
                   </div>
                   <br>
+
                <div class="d-flex justify-content-between">
                  <button type="button" class="btn btn-primary"
                          (click)="showToastr()">Fire Toastr</button>
@@ -132,7 +136,7 @@
                          <input class="form-check-input" type="checkbox"
                                 [(ngModel)]="removeButton"
                                 (change)="pushData('removeButton',removeButton)"role="switch" id="flexSwitchCheckDefault">
-                         <label class="form-check-label" for="flexSwitchCheckDefault">Remove Button</label>
+                         <label class="form-check-label" for="flexSwitchCheckDefault">Remove Close Button</label>
                        </div>
                        <div class="form-check form-switch">
                          <input class="form-check-input" type="checkbox" role="switch"
@@ -143,18 +147,18 @@
                        </div>
                      </div>
                       <hr>
-                      <h5>Toastr Position</h5>
+                      <label class="pb-2">Toastr Position</label>
                       <div class="card_temp">
-                      <div class="col-md p-2 mt-2 card_temp d-flex justify-content-evenly">
-                        <input type="radio" class="btn-check" id="top" name="positionBottom" value="0"
-                               [(ngModel)]="positionBottom"
-                               (change)="pushData('positionBottom', positionBottom)">
-                        <label class="btn btn-outline-secondary"for="top" >Top</label>
-                        <input type="radio" class="btn-check" id="bottom" name="positionBottom" value="auto"
-                               [(ngModel)]="positionBottom"
-                               (change)="pushData('positionBottom', positionBottom)" checked>
-                        <label  class="btn btn-outline-secondary"for="bottom">Bottom</label>
-                      </div>
+<!--                      <div class="col-md p-2 mt-2 card_temp d-flex justify-content-evenly">-->
+<!--                        <input type="radio" class="btn-check" id="top" name="positionBottom" value="0"-->
+<!--                               [(ngModel)]="positionBottom"-->
+<!--                               (change)="pushData('positionBottom', positionBottom)">-->
+<!--                        <label class="btn btn-outline-secondary"for="top" >Top</label>-->
+<!--                        <input type="radio" class="btn-check" id="bottom" name="positionBottom" value="auto"-->
+<!--                               [(ngModel)]="positionBottom"-->
+<!--                               (change)="pushData('positionBottom', positionBottom)" checked>-->
+<!--                        <label  class="btn btn-outline-secondary"for="bottom">Bottom</label>-->
+<!--                      </div>-->
 
                       <div class="col-md p-2 mt-2 d-flex justify-content-between">
                         <input type="radio" class="btn-check" id="btn-check-4"
