@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ToastrNotifyComponent} from "../../projects/toastr-notify/src/lib/toastr-notify.component";
 import {ToastrNotifyService} from "../../projects/toastr-notify/src/lib/toastr-notify.service";
@@ -21,6 +21,7 @@ interface terminalModel {
 })
 export class AppComponent {
   constructor(public toasterService: ToastrNotifyService, public configService: MToastrConfigService) {
+
   }
 
   title = 'Notify';
