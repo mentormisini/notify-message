@@ -38,7 +38,9 @@ Or, if you want to configure it:
 > 
 >removeBackgrounds:false,
 > 
->position: "end",
+>position: "_top", // or _end
+> 
+> align_position:"_right" // or _left _center
 >    })),
 
 
@@ -58,8 +60,9 @@ To display messages, simply use one of the following methods:
 <li>showDanger</li>
 </ul>
 
-In your HTML file, place the following code at the top
->  <lib-toastr-notify></lib-toastr-notify>
+In your HTML file, place whenever you want inside component
+>  <m-notify></m-notify>
+
 
 ## Support
 If you encounter any difficulties during implementation or wish to collaborate, please contact us at www.mentormisini.com

@@ -6,7 +6,7 @@ import {animate, style, transition, trigger} from "@angular/animations";
 import {MToastrConfigService} from "./mToastr-config.service";
 
 @Component({
-  selector: 'lib-toastr-notify',
+  selector: 'm-notify',
   standalone: true,
   imports: [
     NgClass,
