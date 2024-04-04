@@ -15,8 +15,8 @@ export class MToastrConfigService{
     removeProgressBar:false,
     removeButton:false,
     removeBackgrounds:false,
-    position: "end",
-    positionBottom:"0"
+    position: "_top",
+    align_position:"_right"
   };
 
   toastrTimeOut:number = this.config.toastrTimeOut;
@@ -27,6 +27,6 @@ export class MToastrConfigService{
   removeButton:boolean = this.config.removeButton;
   removeBackgrounds:boolean = this.config.removeBackgrounds;
   position:string = this.config.position;
-  positionBottom:string = this.config.positionBottom;
+  align_position:string = this.config.align_position;
 
 }

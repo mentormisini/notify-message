@@ -38,7 +38,7 @@ export class AppComponent {
   removeButton!:boolean;
   removeBackgrounds!:boolean;
   position!:string;
-  positionBottom!:string;
+  align_position!:string;
   public storedSubject$ = new Subject()
   public getConfigs = this.storedSubject$.asObservable();
 
@@ -128,9 +128,9 @@ export class AppComponent {
           const position = item.value.replace(/^"(.*)"$/, '$1'); // Remove surrounding double quotes
           this.configService.position = position;
           break;
-        case 'positionBottom':
-          const positionbottom = item.value.replace(/^"(.*)"$/, '$1'); // Remove surrounding double quotes
-          this.configService.position = positionbottom;
+        case 'align_position':
+          const align_position = item.value.replace(/^"(.*)"$/, '$1'); // Remove surrounding double quotes
+          this.configService.align_position = align_position;
           break;
         // Add more cases for other properties as needed
         default:
@@ -151,7 +151,7 @@ export class AppComponent {
     this.removeProgressBar = false;
     this.removeButton = false;
     this.position = '';
-    this.positionBottom =''
+    this.align_position =''
   }
 
 

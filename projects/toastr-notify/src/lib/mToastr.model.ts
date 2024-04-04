@@ -6,4 +6,5 @@ export interface MToastrModel {
   message: string;
   icon: SafeHtml;
   timeoutRef: any;
+  closeIcon:SafeHtml;
 }

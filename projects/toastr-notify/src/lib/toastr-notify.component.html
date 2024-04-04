@@ -1,7 +1,6 @@
 <div style="position: relative">
   <div class="base_notify"
-       [style.align-items]="mToastConfig.position"
-       [style.top]="mToastConfig.positionBottom">
+    [class]="mToastConfig.align_position +' '+ mToastConfig.position">
     <div class="notifyBox border"
          *ngFor="let t of toastr"
          [class]="t.type"
@@ -16,15 +15,8 @@
       <span [style.font-family]="mToastConfig.fontFamily"
             [style.font-size.px]="mToastConfig.fontSize">{{ t.message }}</span>
       <ng-container *ngIf="!mToastConfig.removeButton;else showEmpty">
-        <svg xmlns="http://www.w3.org/2000/svg"
-             width="20" (click)="hideToastr(t.id)"
-             style="cursor: pointer" fill="none"
-             viewBox="0 0 24 24" stroke-width="1.5"
-             stroke="firebrick" class="w-6 h-6">
-          <path stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18 18 6M6 6l12 12" />
-        </svg>
+        <span [innerHTML]="t.closeIcon"
+              (click)="hideToastr(t.id)"></span>
       </ng-container>
       <ng-template #showEmpty>&nbsp;</ng-template>
     </div>
