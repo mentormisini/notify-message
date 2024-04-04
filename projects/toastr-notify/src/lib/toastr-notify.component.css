@@ -8,7 +8,7 @@
 }
 
 .notifyBox {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 12px;
   width: 300px;
   border-radius: 5px;
@@ -24,7 +24,7 @@
   left: 0;
   bottom: 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  height: 2px;
+  height: 2pt;
   border-radius: 10px;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .success{
-  background: rgba(228, 248, 240, 0.7);
+  background: #ECFAF4;
   color:#1ea97c;
   border-left:6px solid #1ea97c !important;
 
@@ -66,7 +66,7 @@
 }
 
 .warning{
-  background: rgba(255, 242, 226, 0.7);
+  background: #FFF6EB;
   border-left: 6px solid #cc8925 !important;
   color:#cc8925
 }
@@ -74,7 +74,7 @@
   background: #cc8925;
 }
 .info{
-  background: rgba(219, 234, 254, 0.7);
+  background:#E5EFFD;
   border-left: 6px solid #3b82f6 !important;
   color:#3b82f6;
 }
@@ -82,9 +82,9 @@
   background: #3b82f6;
 }
 .danger{
-  background: rgba(255, 231, 230, 0.7);
+  background: #FFEEED;
   border-left: 6px solid #ff5757 !important;;
-  color:#ff5757;
+  color:#B22222FF;
 }
 .danger::before{
   background: #ff5757;
